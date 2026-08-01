@@ -1,0 +1,40 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to check if user is authenticated admin
+    function isAdmin() {
+      return request.auth != null;
+    }
+
+    // Employees Collection Security Rules
+    match /employees/{employeeDocId} {
+      // Public users can ONLY read employee verification data
+      allow read: if true;
+      
+      // Admin users have full control (create, update, delete)
+      allow write, update, delete, create: if isAdmin();
+    }
+
+    // Verification Logs Collection
+    match /verification_logs/{logId} {
+      // Public can create verification log records when scanning/verifying
+      allow create: if true;
+      // Admin can read all verification audit logs
+      allow read: if isAdmin();
+      allow update, delete: if isAdmin();
+    }
+
+    // Audit Logs Collection
+    match /audit_logs/{auditId} {
+      allow read, write: if isAdmin();
+    }
+
+    // Company Settings Collection
+    match /company_settings/{settingId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}

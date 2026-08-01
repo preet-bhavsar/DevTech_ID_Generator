@@ -1,0 +1,205 @@
+import { Employee, SystemSettings, AuditLog, VerificationLog, Intern } from '../types';
+
+export const INITIAL_SETTINGS: SystemSettings = {
+  companyName: 'DevTech IT Solution Pvt. Ltd.',
+  tagline: 'YOUR VISION OUR TECH',
+  website: 'www.devtechitsolution.com',
+  contactEmail: 'hr@devtechitsolution.com',
+  contactPhone: '+919321812345',
+  headquartersAddress: 'Kalyan, Kalyan, India',
+  autoLogoutMinutes: 15,
+  cardTemplate: 'executive-gold',
+  branches: [
+    {
+      id: 'br-hq',
+      name: 'Kalyan HQ Branch',
+      address: 'Kalyan',
+      city: 'Kalyan',
+      state: 'Kalyan',
+      country: 'India',
+      pinCode: '421301',
+      phone: '+919321812345',
+      email: 'hr@devtechitsolution.com',
+      isHeadquarters: true,
+    }
+  ]
+};
+
+export const INITIAL_EMPLOYEES: Employee[] = [
+  {
+    id: 'emp-001',
+    employeeId: 'DTS-EMP-DEV-0001',
+    employeeCode: 'DTS-EMP-DEV-0001',
+    fullName: 'Yash Sunil Mohite',
+    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
+    department: 'Development',
+    designation: 'Software Developer',
+    companyEmail: 'yash.mohite@devtechitsolution.com',
+    personalEmail: 'yash.mohite@gmail.com',
+    phone: '+91 93218 12345',
+    dateOfJoining: '01 May 2023',
+    validTill: '30 Apr 2028',
+    bloodGroup: 'A+',
+    gender: 'Male',
+    dateOfBirth: '1998-05-12',
+    address: 'Kalyan',
+    city: 'Kalyan',
+    state: 'Maharashtra',
+    country: 'India',
+    pinCode: '421301',
+    managerName: 'DevTech Director Board',
+    employmentType: 'Full Time',
+    status: 'Active',
+    skills: ['React 19', 'TypeScript', 'Node.js', 'Software Development'],
+    verificationCount: 52,
+    lastVerifiedAt: '2026-07-29 14:30',
+    createdAt: '2023-05-01T09:00:00Z',
+    updatedAt: '2026-07-29T14:30:00Z',
+    createdBy: 'HR Super Admin'
+  },
+  {
+    id: 'emp-002',
+    employeeId: 'DTS-EMP-CYB-0001',
+    employeeCode: 'DTS-EMP-CYB-0001',
+    fullName: 'Sophia Chen',
+    photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80',
+    department: 'Cyber Security',
+    designation: 'Lead Security Analyst',
+    companyEmail: 'sophia.chen@devtechitsolution.com',
+    personalEmail: 'sophia.chen@gmail.com',
+    phone: '+91 93218 55443',
+    dateOfJoining: '15 Jan 2024',
+    validTill: '14 Jan 2029',
+    bloodGroup: 'O+',
+    gender: 'Female',
+    dateOfBirth: '1994-08-20',
+    address: 'Kalyan',
+    city: 'Kalyan',
+    state: 'Maharashtra',
+    country: 'India',
+    pinCode: '421301',
+    managerName: 'Yash Sunil Mohite',
+    employmentType: 'Full Time',
+    status: 'Active',
+    verificationCount: 28,
+    lastVerifiedAt: '2026-07-28 10:15',
+    createdAt: '2024-01-15T09:00:00Z',
+    updatedAt: '2026-07-20T10:00:00Z',
+    createdBy: 'HR Admin'
+  },
+  {
+    id: 'emp-003',
+    employeeId: 'DTS-EMP-DEV-0002',
+    employeeCode: 'DTS-EMP-DEV-0002',
+    fullName: 'Alexander Wright',
+    photo: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
+    department: 'Development',
+    designation: 'Principal Architect',
+    companyEmail: 'alexander.wright@devtechitsolution.com',
+    personalEmail: 'alex.wright@gmail.com',
+    phone: '+91 93218 88990',
+    dateOfJoining: '10 Mar 2022',
+    validTill: 'Until Employment',
+    bloodGroup: 'B+',
+    gender: 'Male',
+    dateOfBirth: '1990-11-24',
+    address: 'Kalyan',
+    city: 'Kalyan',
+    state: 'Maharashtra',
+    country: 'India',
+    pinCode: '421301',
+    managerName: 'Yash Sunil Mohite',
+    employmentType: 'Full Time',
+    status: 'Active',
+    verificationCount: 41,
+    lastVerifiedAt: '2026-07-25 16:20',
+    createdAt: '2022-03-10T09:00:00Z',
+    updatedAt: '2026-07-15T11:20:00Z',
+    createdBy: 'HR Admin'
+  }
+];
+
+export const INITIAL_AUDIT_LOGS: AuditLog[] = [
+  {
+    id: 'audit-1',
+    action: 'Employee Created',
+    performedBy: 'HR Super Admin',
+    targetEmployeeId: 'DTS-EMP-DEV-0001',
+    targetEmployeeName: 'Yash Sunil Mohite',
+    timestamp: '2026-07-29 14:00',
+    details: 'Generated employee record for Software Developer in Development department.'
+  }
+];
+
+export const INITIAL_VERIFICATION_LOGS: VerificationLog[] = [
+  {
+    id: 'vlog-1',
+    employeeId: 'DTS-EMP-DEV-0001',
+    employeeName: 'Yash Sunil Mohite',
+    timestamp: '2026-07-29 14:30:00',
+    browser: 'Chrome 127.0 (Desktop)',
+    deviceType: 'Desktop',
+    location: 'Kalyan, Maharashtra, India',
+    status: 'Active'
+  }
+];
+
+export const INITIAL_INTERNS: Intern[] = [
+  {
+    id: 'int-001',
+    internId: 'DTS-INT-DEV-0001',
+    internCode: 'DTS-INT-DEV-0001',
+    fullName: 'Aarav Mehta',
+    photo: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=500&q=80',
+    department: 'Development',
+    role: 'Software Engineering Intern',
+    college: 'IIT Bombay',
+    duration: '6 Months',
+    startDate: '01 Feb 2026',
+    endDate: '31 Jul 2026',
+    mentorName: 'Yash Sunil Mohite',
+    status: 'Active',
+    email: 'aarav.mehta@devtechitsolution.com',
+    phone: '+91 98200 11223',
+    createdAt: '2026-02-01T09:00:00Z',
+    updatedAt: '2026-07-01T10:00:00Z'
+  },
+  {
+    id: 'int-002',
+    internId: 'DTS-INT-CYB-0001',
+    internCode: 'DTS-INT-CYB-0001',
+    fullName: 'Priyanka Desai',
+    photo: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80',
+    department: 'Cyber Security',
+    role: 'Cyber Security Intern',
+    college: 'VJTI Mumbai',
+    duration: '3 Months',
+    startDate: '15 Jun 2026',
+    endDate: '15 Sep 2026',
+    mentorName: 'Sophia Chen',
+    status: 'Active',
+    email: 'priyanka.desai@devtechitsolution.com',
+    phone: '+91 98200 44556',
+    createdAt: '2026-06-15T09:00:00Z',
+    updatedAt: '2026-07-01T10:00:00Z'
+  },
+  {
+    id: 'int-003',
+    internId: 'DTS-INT-CLD-0001',
+    internCode: 'DTS-INT-CLD-0001',
+    fullName: 'Rohan Sharma',
+    photo: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=80',
+    department: 'Cloud Computing',
+    role: 'Cloud Solutions Intern',
+    college: 'NIT Surat',
+    duration: '6 Months',
+    startDate: '01 Apr 2026',
+    endDate: '30 Sep 2026',
+    mentorName: 'Alexander Wright',
+    status: 'Active',
+    email: 'rohan.sharma@devtechitsolution.com',
+    phone: '+91 98200 77889',
+    createdAt: '2026-04-01T09:00:00Z',
+    updatedAt: '2026-07-01T10:00:00Z'
+  }
+];
